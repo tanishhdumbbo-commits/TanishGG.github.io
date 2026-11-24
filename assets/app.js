@@ -1,5 +1,5 @@
-const SB_URL="YOUR_SUPABASE_PROJECT_URL";
-const SB_ANON_KEY="YOUR_SUPABASE_ANON_KEY";
+const SB_URL="https://ulycivxmrkbuwbrxbzgd.supabase.co";
+const SB_ANON_KEY="sb_publishable_kiLaJIXU3-QjP_agL7pNvQ_kTHL2y3y";
 const db=(window.supabase&&SB_URL.startsWith("https://")&&SB_ANON_KEY!=="YOUR_SUPABASE_ANON_KEY")?window.supabase.createClient(SB_URL,SB_ANON_KEY):null;
 const CONTACT={email:"tanishhdumbbo@gmail.com",discord:"https://discord.com/users/1465283869195501670",instagram:"https://www.instagram.com/tanishhhg?evlk=MTQxaGNlMDlwNGRnYg=="};
 const TEAM=[{name:"Tanish",role:"Founder & Lead Developer",detail:"Discord development, website design and Roblox game development."},{name:"Weirdmine",role:"Developer",detail:"Development team staff."},{name:"Sky",role:"Helper · Team Staff",detail:"Community assistance and team support."}];
