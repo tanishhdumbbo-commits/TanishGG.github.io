@@ -22,7 +22,7 @@ Bright, responsive portfolio with separate top-navigation pages, public Q&A/revi
 - Sky — Helper · Team Staff only; Discord: https://discord.com/users/1541710506715250707
 - Tanish email: tanishhdumbbo@gmail.com
 - Tanish Discord: https://discord.com/users/1465283869195501670
-- Tanish Instagram: https://www.instagram.com/still_lonelyyy?cnvx=MTQxaGNlMDlwNGRnYg==
+- Tanish Instagram: https://www.instagram.com/tanishhhg?evlk=MTQxaGNlMDlwNGRnYg==
 
 ## Notes
-The app deliberately does not include a fake hard-coded admin password. Admin login requires Supabase Auth and the `profiles.role = 'admin'` record. Reviews and questions stay pending until approved/answered. Budget requests are private under the included RLS policy. To change visible team/contact copy later, edit `assets/app.js`; The admin portal manages news, projects, reviews, Q&A and private budget requests. Static profile/team/service text is currently edited in assets/app.js; it is not yet a full visual site-settings CMS.
+The app deliberately does not include a fake hard-coded admin password. Admin login requires Supabase Auth and the `profiles.role = 'admin'` record. Reviews and questions stay pending until approved/answered. Budget requests are private under the included RLS policy. To change visible team/contact copy later, edit `assets/app.js`; full content CMS editing can be expanded by adding editable site-settings fields.
