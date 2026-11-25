@@ -1226,4 +1226,4 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", startTanishAdmin);
 } else {
   startTanishAdmin();
-                            }
+}
