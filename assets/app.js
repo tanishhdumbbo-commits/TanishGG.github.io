@@ -878,62 +878,18 @@ function attachExtraForms() {
    ===================================================== */
 
 // Updated shell: supports an optional introduction.
+
 function shell(title, subtitle, content, extraContent = "") {
   return `
-    <div class="page-wrapper">
-      <header class="site-header">
-        <a class="brand" href="#home">
-          <span class="brand-mark">T</span>
-          <span>TANISH<span class="brand-accent">GG</span></span>
-        </a>
+    <div class="page-content">
+      <section class="page-heading">
+        <p class="eyebrow">TANISHGG / ${escapeHTML(currentPage)}</p>
+        <h1>${escapeHTML(title)}</h1>
+        <p>${escapeHTML(subtitle)}</p>
+      </section>
 
-        <button class="menu-toggle" id="menuToggle"
-          aria-label="Toggle navigation">☰</button>
-
-        <nav class="main-nav" id="mainNav">
-          ${[
-            ["home", "Home"],
-            ["projects", "Projects"],
-            ["services", "Services"],
-            ["team", "Team"],
-            ["about", "About"],
-            ["reviews", "Reviews"],
-            ["news", "News"],
-            ["qa", "Q&A"],
-            ["contact", "Contact"],
-            ["budget", "Budget"]
-          ].map(([page, label]) => `
-            <a href="#${page}"
-              class="${currentPage === page ? "active" : ""}">
-              ${label}
-            </a>
-          `).join("")}
-        </nav>
-      </header>
-
-      <main class="main-content">
-        <section class="page-heading">
-          <p class="eyebrow">TANISHGG / ${escapeHTML(currentPage)}</p>
-          <h1>${escapeHTML(title)}</h1>
-          <p>${escapeHTML(subtitle)}</p>
-        </section>
-
-        ${content || ""}
-        ${extraContent || ""}
-      </main>
-
-      <footer class="site-footer">
-        <div class="footer-brand">TANISH<span>GG</span></div>
-        <p>Think. Design. Build.</p>
-        <p>© ${new Date().getFullYear()} TanishGG. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="${safeLink(siteData.contact.instagram)}"
-            target="_blank" rel="noopener">Instagram</a>
-          <a href="mailto:${escapeHTML(siteData.contact.email)}">
-            Email
-          </a>
-        </div>
-      </footer>
+      ${content || ""}
+      ${extraContent || ""}
     </div>
   `;
 }
@@ -1029,23 +985,10 @@ async function render() {
 }
 
 // Navigation without repeatedly adding event listeners.
+
 function attachNavigation() {
-  document.querySelectorAll(".main-nav a, .brand").forEach((link) => {
-    link.onclick = (event) => {
-      const hash = link.getAttribute("href");
-      if (!hash || !hash.startsWith("#")) return;
-
-      event.preventDefault();
-
-      currentPage = hash.slice(1) || "home";
-      history.replaceState(null, "", hash);
-
-      render();
-    };
-  });
-
-  const toggle = $("#menuToggle");
-  const nav = $("#mainNav");
+  const toggle = document.getElementById("menu");
+  const nav = document.getElementById("nav");
 
   if (toggle) {
     toggle.onclick = () => nav?.classList.toggle("open");
