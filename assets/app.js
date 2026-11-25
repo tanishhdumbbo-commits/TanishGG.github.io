@@ -986,19 +986,35 @@ async function render() {
 
 // Navigation without repeatedly adding event listeners.
 
+
 function attachNavigation() {
   const toggle = document.getElementById("menu");
   const nav = document.getElementById("nav");
 
-  if (toggle) {
-    toggle.onclick = () => nav?.classList.toggle("open");
-  }
+  toggle?.addEventListener("click", () => {
+    nav?.classList.toggle("open");
+  });
+
+  document.querySelectorAll("#nav a[data-page], .navbtn").forEach((link) => {
+    link.onclick = (event) => {
+      event.preventDefault();
+
+      const page = link.dataset.page ||
+        new URL(link.href).searchParams.get("page") ||
+        "budget";
+
+      currentPage = page;
+      history.pushState(null, "", "?page=" + page);
+
+      render();
+      nav?.classList.remove("open");
+    };
+  });
 }
 
 // Handle browser back and forward navigation.
-window.addEventListener("hashchange", () => {
-  const page = location.hash.slice(1) || "home";
-  currentPage = page;
+window.addEventListener("popstate", () => {
+  currentPage = new URLSearchParams(location.search).get("page") || "home";
   render();
 });
 
@@ -1035,7 +1051,7 @@ window.addEventListener("hashchange", () => {
 
   await loadSiteData();
 
-  currentPage = location.hash.slice(1) || "home";
+  currentPage = new URLSearchParams(location.search).get("page") || "home";
 
   await render();
 
