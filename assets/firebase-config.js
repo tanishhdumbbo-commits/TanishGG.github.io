@@ -1,5 +1,8 @@
+
+/* TANISHGG FIREBASE CONFIGURATION */
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAhxcEJvdTTvKZMpYuPRgNBN5t5M98NnUg",
+  apiKey: "AIzaSyAhxcEJvdTTvKZMpYuPRgNBN5tM98NnUg",
   authDomain: "tanishgg-portfolio-cd3b0.firebaseapp.com",
   projectId: "tanishgg-portfolio-cd3b0",
   storageBucket: "tanishgg-portfolio-cd3b0.firebasestorage.app",
@@ -11,5 +14,5 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-const firebaseDB = firebase.firestore();
-const firebaseAuth = firebase.auth();
+window.tanishDB = firebase.firestore();
+window.tanishAuth = firebase.auth();
