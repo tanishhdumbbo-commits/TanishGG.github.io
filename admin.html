@@ -1,1 +1,94 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TanishGG Admin</title><link rel="stylesheet" href="assets/style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head><body><header class="top"><div class="nav wrap"><a class="brand" href="index.html">Tanish<span>GG</span> <i>ADMIN</i></a><a href="index.html">← View website</a></div></header><main class="wrap page"><div class="page-intro"><div class="eyebrow">Private control room</div><h1 class="page-title">Admin portal</h1><p class="muted">Sign in with your authorized Supabase admin account to manage website content and submissions.</p></div><section class="card form-card" id="login"><h3>Admin login</h3><div class="field"><label>Email</label><input id="email" type="email" autocomplete="username"></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password"></div><button class="btn" id="signIn">Sign in</button><p class="muted" id="status">Configure Supabase in assets/app.js and assets/admin.js first.</p></section><section id="panel" hidden><div class="actions"><button class="btn alt" data-table="news">News</button><button class="btn alt" data-table="projects">Projects</button><button class="btn alt" data-table="reviews">Reviews</button><button class="btn alt" data-table="questions">Q&A</button><button class="btn alt" data-table="budgets">Budget requests</button><button class="btn alt" id="logout">Log out</button></div><div id="manager" class="section"></div></section></main><script src="assets/app.js"></script><script src="assets/admin.js"></script></body></html>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d14">
+  <title>TanishGG Admin Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+  <header class="top">
+    <div class="nav wrap">
+      <a class="brand" href="index.html">
+        Tanish<span>GG</span> <i>ADMIN</i>
+      </a>
+
+      <a href="index.html">← View website</a>
+    </div>
+  </header>
+
+  <main class="wrap page">
+
+    <div class="page-intro">
+      <div class="eyebrow">Private control room</div>
+      <h1 class="page-title">Admin portal</h1>
+      <p class="muted">
+        Manage your TanishGG website, content and visitor submissions.
+      </p>
+    </div>
+
+    <section class="card form-card" id="login">
+      <h3>Admin login</h3>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="username" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </div>
+
+      <button class="btn" id="signIn" type="button">
+        Sign in
+      </button>
+
+      <p class="muted" id="status">
+        Sign in using your authorised Firebase admin account.
+      </p>
+    </section>
+
+    <section id="panel" hidden>
+      <div class="actions">
+        <button class="btn" data-section="editor">Website Editor</button>
+        <button class="btn alt" data-section="news">News</button>
+        <button class="btn alt" data-section="projects">Projects</button>
+        <button class="btn alt" data-section="reviews">Reviews</button>
+        <button class="btn alt" data-section="questions">Q&A</button>
+        <button class="btn alt" data-section="budgets">Budget requests</button>
+        <button class="btn alt" id="logout">Log out</button>
+      </div>
+
+      <div id="manager" class="section">
+        <div class="empty">Loading admin dashboard...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footrow">
+      <span>© <span id="year"></span> TanishGG. Admin Portal.</span>
+      <a href="index.html">Back to website</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+  <script src="assets/app.js"></script>
+  <script src="assets/admin.js"></script>
+
+</body>
+</html>
