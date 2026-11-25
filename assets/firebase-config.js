@@ -2,7 +2,7 @@
 /* TANISHGG FIREBASE CONFIGURATION */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAhxcEJvdTTvKZMpYuPRgNBN5tM98NnUg",
+  apiKey: "AIzaSyAhxcEJvdTTvKZMpYuPRgNBN5t5M98NnUg",
   authDomain: "tanishgg-portfolio-cd3b0.firebaseapp.com",
   projectId: "tanishgg-portfolio-cd3b0",
   storageBucket: "tanishgg-portfolio-cd3b0.firebasestorage.app",
